@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bài 13</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+
+<style>
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: transparent;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        background-color: #fff;
+    }
+
+    .container-full {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .content {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .col-2 {
+        width: 16.6666%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-8 {
+        width: 33.33333%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-3 {
+        width: 30%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-7 {
+        width: 70%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-12 {
+        width: 100%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-1 {
+        width: 15%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-5 {
+        width: 33.3333%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-9 {
+        width: 85%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-4 {
+        width: 25%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-6 {
+        width: 50%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .slide {
+        height: 500px;
+        background-image: url(https://demo.w3layouts.com/demos_new/template_demo/29-01-2019/bootie_demo_Free/2074426907/web/images/banner.jpg?fbclid=IwAR2fUigYMeYXIENeI769armHLmLtLhB7GbdlUHkruBNnAfzHQtPfWBH_rzM);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        position: relative;
+    }
+    .header-menu {
+        margin-top: 20px;
+    }
+    .menu-nav ul {
+        margin: 0;
+        padding: 0;
+    }
+    .menu-reponsive {
+        width: 100%;
+        float: left;
+        width: 100%;
+        float: left;
+        text-align: right;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        display: none;
+    }
+    .menu-reponsive a {
+        padding: 6px 15px;
+        background: white;
+        text-decoration: none;
+        color: #000000;
+        /*text-transform: uppercase;*/
+        border: 1px #8f9599 solid;
+    }
+    .menu-nav {
+        width: 100%;
+        text-align: right;
+    }
+    .menu-nav ul li {
+        display: inline-table;
+        list-style: none;
+        padding-left: 35px;
+        position: relative;
+    }
+    .menu-nav ul li a {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 13px;
+        color: white;
+        font-weight: bold;
+    }
+    .menu-nav ul .active a {
+        color: red;
+    }
+    .botie .text {
+        color: white;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    .menu-nav ul li .sub-menu {
+        width: 200px;
+        position: absolute;
+        width: 151px;
+        top: 24px;
+        display: none;
+        background: white;
+    }
+    .menu-nav ul li .sub-menu li {
+        width: 100%;
+        text-align: left;
+        line-height: 35px;
+    }
+    .menu-nav ul li .sub-menu li a {
+        color: #000000;
+    }
+    .menu-nav ul li:hover .sub-menu {
+        display: block;
+    }
+    .trending-text {
+        position: absolute;
+        top: 30%;
+        width: 80%;
+        float: left;
+    }
+    .trending {
+        width: 100%;
+        float: left;
+        text-transform: uppercase;
+        color: white;
+    }
+    .casual {
+        width: 100%;
+        float: left;
+        text-transform: uppercase;
+        font-size: 22px;
+        color: white;
+    }
+    .men {
+        width: 100%;
+        float: left;
+        text-transform: uppercase;
+        font-size: 22px;
+        color: white;
+        margin-bottom: 30px;
+    }
+    .shop .shop-treding {
+        padding: 10px 18px;
+        background: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: red;
+    }
+    .shop .reamore {
+        padding: 10px 18px;
+        background: #14a5fa;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+    }
+    .shipping {
+        padding: 35px;
+        border: 1px #f8f9fa solid;
+        margin-top: 50px;
+        overflow: hidden;
+        background: #f8f9fa;
+        box-shadow: 5px 5px 5px #a29999;
+        margin-bottom: 40px;
+        min-height: 250px;
+    }
+    .shipping-red {
+        background: #ff4c4c;
+    }
+    .icon-go {
+        padding-top: 11px;
+    }
+    .icon-go i {
+        color: #ff4c4c;
+    }
+    .text-shipping .free {
+        width: 100%;
+        float: left;
+        text-transform: uppercase;
+        color: #000000;
+        font-weight: bold;
+    }
+    .text-shipping .all {
+        color: #8f9599;
+        margin-top: 15px;
+    }
+    .text-span {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 30px;
+        margin-top: 50px;
+    }
+    .text-span .new-arivalis {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 18px;
+        color: #000000;
+    }
+    .images-product {
+        width: 100%;
+        float: left;
+        height: 150px;
+        background-image: url(http://file.hstatic.net/1000138641/file/9125088545_87617692.jpg);
+        background-size: cover;
+        background-position: center center;
+        margin-bottom: 67px;
+    }
+    .images-product-center {
+        width: 100%;
+        float: left;
+        height: 150px;
+        background-image: url(https://cdn.muabannhanh.com/asset/frontend/img/gallery/2017/11/19/5a114197dbb8d_1511080343.jpg);
+        background-size: cover;
+        background-position: center center;
+        margin-bottom: 67px;
+    }
+    .images-product-right {
+        width: 100%;
+        float: left;
+        height: 150px;
+        background-image: url(https://4menshop.com/images/thumbs/2019/01/giay-the-thao-trang-g216_small-10625-t.jpg);
+        background-size: cover;
+        background-position: center center;
+        margin-bottom: 67px;
+    }
+    .detail-product {
+        padding: 25px;
+        border: 1px #8f9599 solid;
+    }
+    .detail-product {
+        padding: 25px;
+        border: 1px #8f9599 solid;
+        margin-bottom: 30px;
+    }
+    .iteam {
+        text-align: center;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .new-a a {
+        padding: 5px 12px;
+        background: #414b52;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+    }
+    .iteam .bela {
+        width: 100%;
+        float: left;
+        margin-top: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+    .iteam .price {
+        color: #ff4c4c;
+        width: 100%;
+        float: left;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .boder-bottom {
+        border-top: 1px #414b52 solid;
+        padding-bottom: 58px;
+        border-bottom: 1px #414b52 solid;
+    }
+    .paddbotom {
+        margin-bottom: 40px;
+    }
+    .jenifer {
+        width: 100%;
+        margin: 0 auto;
+        padding: 60px;
+        text-align: center;
+        background: #f2f2f2;
+    }
+    .jenifer .jenifer-text {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+    .icon-try i {
+        color: #ff4c4c;
+        margin-bottom: 10px;
+    }
+    .startdard {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .loremis i {
+        color: #505c65;
+    }
+    .popular {
+        margin-bottom: 40px;
+    }
+    .popular-text {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .popular-text .text-popular {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .shoe-product .images-shoe {
+        width: 100%;
+        float: left;
+        height: 560px;
+        background-image: url(https://images.tuankhuyenmai.com/2019/01/30/TuanKhuyenMai.com-sp-412502_20190130114719.jpg);
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+    .shoe-product {
+        padding: 15px;
+        border: 1px #a29999 solid;
+        width: 100%;
+        float: left;
+    }
+    .images-shoe {
+        padding: 25px;
+        width: 100;
+        float: left;
+    }
+    .shop-now {
+        position: absolute;
+        bottom: 42px;
+        right: 42px;
+    }
+    .shop-now .shopping-now {
+        text-transform: uppercase;
+        color: #000000;
+        font-weight: bold;
+    }
+    .left-product-male {
+        width: 100%;
+        float: left;
+    }
+    .images-top {
+        width: 100%;
+        float: left;
+        height: 249px;
+        background-image: url(https://vinagiay.vn/uploads/products/thumb/giay-moi-nam-c-o-m060-de_m500m500.jpg);
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+    .bottom-images {
+        width: 100%;
+        float: left;
+        height: 249px;
+        background-image: url(https://vinagiay.vn/uploads/products/thumb/giay-moi-nam-c-o-m061_m500m500.jpg);
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+    .top-product {
+        padding: 15px;
+        width: 100%;
+        float: left;
+        border: 1px #a29999 solid;
+        margin-bottom: 15px;
+    }
+    .bottom-product {
+        padding: 15px;
+        width: 100%;
+        float: left;
+        border: 1px #a29999 solid;
+        margin-top: 15px;
+    }
+    .news-product {
+        width: 100%;
+        float: left;
+        background: #1d262e;
+    }
+    .new-product-small {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .icon-small {
+        text-align: center;
+    }
+    .diamond {
+        width: 100%;
+        float: left;
+        line-height: 90px;
+    }
+    .diamond i {
+        color: #757a7d;
+        font-size: 1.7em;
+    }
+    .minim {
+        padding-top: 50px;
+    }
+    .text-bootie {
+        width: 100%;
+        text-align: left;
+    }
+    .text-bootie .bootie {
+        width: 100%;
+        float: left;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    .text-bootie .enim {
+        color: #8f9599;
+        font-size: 14px;
+        width: 100%;
+        float: left;
+        margin-bottom: 25px;
+    }
+    .text-bootie .catch {
+        width: 100%;
+        float: left;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: #505c65;
+        margin-bottom: 25px;
+    }
+    .social-network i {
+        margin-right: 8px;
+        color: white;
+    }
+    .social-network .fa-facebook {
+        border-radius: 50%;
+        background: #3b5997;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        width: 30px;
+        text-align: center;
+    }
+    .social-network .fa-twitter {
+        border-radius: 50%;
+        background: #1ba1f1;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        width: 30px;
+        text-align: center;
+    }
+    .social-network .fa-futbol-o {
+        border-radius: 50%;
+        background: #ea4c89;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        width: 30px;
+        text-align: center;
+    }
+    .social-network .fa-google-plus {
+        border-radius: 50%;
+        background: #f44236;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        width: 30px;
+        text-align: center;
+    }
+    .footer {
+        padding-left: 34px;
+        border-left: 1px #8f9599 solid;
+        width: 100%;
+        float: left;
+    }
+    .footer-text .new {
+        width: 100%;
+        float: left;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 20px;
+    }
+    .footer-text .byscib {
+        width: 100%;
+        float: left;
+        font-size: 14px;
+        color: #8f9599;
+        margin-bottom: 15px;
+    }
+    .form-footer {
+        width: 100%;
+        float: left;
+    }
+    .form-footer form input {
+        width: 90%;
+        float: left;
+        height: 40px;
+        background: #efeeee;
+        border: none;
+    }
+    .form-footer form button {
+        width: 10%;
+        float: left;
+        height: 40px;
+        background: #1d262e;
+        border: none;
+    }
+    .form-footer form button i {
+        color: #ff4c4c;
+    }
+    .form-footer form input::placeholder {
+        padding-left: 15px;
+    }
+    .top-footer {
+        width: 100%;
+        float: left;
+        border-bottom: 1px #8f9599 solid;
+        padding-bottom: 34px;
+    }
+    .footer-nav {
+        width: 100%;
+        float: left;
+    }
+    .bottom-footer {
+        width: 100%;
+        float: left;
+        padding-top: 34px;
+    }
+    .footer-submenu ul {
+        margin: 0;
+        padding: 0;
+    }
+    .footer-submenu ul li {
+        list-style: none;
+        padding-bottom: 20px;
+    }
+    .footer-submenu ul li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #8f9599;
+        font-size: 13px;
+    }
+    .footer-submenu ul .active a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .footer-submenu ul .email a {
+        text-decoration: none;
+        text-transform: lowercase;
+    }
+    .footer-submenu ul .phone a {
+        text-decoration: none;
+        color: #8f9599;
+    }
+    .footer-submenu ul .honey a {
+        text-decoration: none;
+        color: #8f9599;
+        text-transform: capitalize;
+    }
+    .footer-boolie {
+        width: 100%;
+        float: left;
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    .icon-aria {
+        width: 100%;
+        float: left;
+        text-align: right;
+    }
+    .text-all .bollie-text {
+        color: #8f9599;
+    }
+    .icon-aria i {
+        padding: 15px;
+        background: #4a4b4c;
+        color: white;
+    }
+
+    /* style cho máy tính bảng chiều dọc từ 768px đến 991px */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .menu-nav ul li {
+            width: 100%;
+            display: none;
+        }
+        .startdard {
+            width: 100%;
+            float: left;
+        }
+
+        .menu-reponsive {
+            display: block;
+        }
+        .col-sm-6 {
+            width: 50%;
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px
+        }
+        .col-sm-12 {
+            width: 100%;
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px
+        }
+        .images-product,.images-product-center, .images-product-right{
+            height: 100px;
+        }
+
+        .shoe-product .images-shoe{
+            height: 400px;
+        }
+        .images-top, .bottom-images{
+            height: 169px;
+        }
+    }
+    /* style cho điện  thoại từ 480px đến 767px */
+    @media (min-width: 481px) and (max-width: 767px) {
+        .menu-nav ul li {
+            width: 100%;
+            display: none;
+        }
+        .menu-reponsive {
+            display: block;
+        }
+        .footer{
+            border: none;
+            padding-left: 0px;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .col-sm-6 {
+            width: 100%;
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+        }
+        .footer-submenu  ul{
+            width: 100%;
+            float: left;
+        }
+        .shoe-product .images-shoe {
+            height: 249px;
+        }
+
+        .footer-text{
+            width: 100%;
+            float: left;
+            margin-top: 15px;
+        }
+    }
+    @media (max-width: 480px) {
+        .menu-nav ul li {
+            width: 100%;
+            display: none;
+        }
+        .menu-reponsive {
+            display: block;
+        }
+        .footer{
+            border: none;
+            padding-left: 0px;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .col-sm-6 {
+            width: 100%;
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+        }
+        .col-sm-12 {
+            width: 100%;
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+        }
+        .footer-submenu  ul{
+            width: 100%;
+            float: left;
+        }
+        .shoe-product .images-shoe {
+            height: 249px;
+        }
+
+        .footer-text{
+            width: 100%;
+            float: left;
+            margin-top: 15px;
+        }
+    }
+
+</style>
+
+<body>
+<div class="container-full">
+    <div class="row">
+        <div class="slide">
+            <div class="container">
+                <div class="header-menu">
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="botie">
+                                <span class="text">bootie</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="row">
+                            <div class="menu-reponsive">
+                                <a href="">menu</a>
+                            </div>
+                            <div class="menu-nav">
+                                <ul>
+                                    <li class="active"><a href="">home</a></li>
+                                    <li><a href="">about</a></li>
+                                    <li><a href="">blog</a></li>
+                                    <li>
+                                        <a href="">drop down <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <ul class="sub-menu">
+                                            <li><a href="">blog</a></li>
+                                            <li><a href="">shop now</a></li>
+                                            <li><a href="">single page</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="trending-text">
+                    <span class="trending">Trendding of the week</span>
+                    <span class="casual">casual shoes</span>
+                    <span class="men">for men</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4 col-sm-6">
+            <div class="shipping">
+                <div class="col-1">
+                    <div class="icon-go">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="text-shipping">
+                        <span class="free">free shipping</span>
+                        <span class="all">on all order over $2.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-sm-6">
+            <div class="shipping-red shipping">
+                <div class="col-1">
+                    <div class="icon-go">
+                        <i class="fa fa-volume-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="text-shipping">
+                        <span class="free">free return</span>
+                        <span class="all">on 1st exchampage 30day</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-sm-6">
+            <div class="shipping">
+                <div class="col-1">
+                    <div class="icon-go">
+                        <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="text-shipping">
+                        <span class="free">free shipping</span>
+                        <span class="all">on all order over $2.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-sm-6">
+            <div class="shipping">
+                <div class="col-1">
+                    <div class="icon-go">
+                        <i class="fa fa-usd" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="text-shipping">
+                        <span class="free">member discount</span>
+                        <span class="all">premium support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="text-span">
+        <span class="new-arivalis">new arivalis</span>
+    </div>
+    <div class="row paddbotom">
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product-center"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product-right"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product-center"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product-center"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 col-sm-6">
+            <div class="detail-product">
+                <div class="images-product-right"></div>
+                <div class="iteam">
+                    <div class="boder-bottom">
+                        <div class="new-a"><a href="">new</a></div>
+                        <span class="bela">bela-toret</span>
+                    </div>
+                    <span class="price">$675.00</span>
+                    <div class="icon-love">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-full">
+    <div class="row">
+        <div class="jenifer">
+            <span class="jenifer-text">jenifer bunrns</span>
+            <div class="startdard col-sm-12">
+                <div class="icon-try">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <div class="loremis">
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    Lorem Ipsum has been the industry's standard since the 1500s.
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s,
+                    Lorem Ipsum has been.
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="popular-text"><span class="text-popular">popular products</span></div>
+    <div class="popular row">
+        <div class="col-6 col-sm-6">
+            <div class="shoe-product">
+                <div class="images-shoe">
+                    <div class="shop-now"><span class="shopping-now">shop now</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6">
+            <div class="left-product-male">
+                <div class="top-product">
+                    <div class="images-top">
+                        <div class="images-shoe">
+                            <div class="shop-now"><span class="shopping-now">shop now</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-product">
+                    <div class="bottom-images">
+                        <div class="images-shoe">
+                            <div class="shop-now"><span class="shopping-now">shop now</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-full">
+    <div class="row">
+        <div class="news-product">
+            <div class="new-product-small">
+                <div class="row icon-small">
+                    <div class="col-2">
+                        <div class="diamond"><i class="fa fa-connectdevelop" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="col-2">
+                        <div class="diamond"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="col-2">
+                        <div class="diamond"><i class="fa fa-bandcamp" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="col-2">
+                        <div class="diamond"><i class="fa fa-diamond" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="col-2">
+                        <div class="diamond"><i class="fa fa-spotify" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="col-2">
+                        <div class="diamond"><i class="fa fa-safari" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="row minim">
+        <div class="col-3 col-sm-6">
+            <div class="text-bootie">
+                <span class="bootie">bootie</span>
+                <span class="enim">Ut enim ad minim veniam, quis nostrud exercitatio Ut enim ad minim veniam, quis
+                        minim veniam, quis</span>
+                <span class="catch">catch on social</span>
+                <div class="social-network">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-7 col-sm-6">
+            <div class="footer">
+                <div class="top-footer">
+                    <div class="footer-text">
+                        <span class="new">newsletter</span>
+                        <span class="byscib">
+                                by subscribing to your mallinh list you wills alwway get latest newsand updates form us
+                            </span>
+                    </div>
+                    <div class="form-footer">
+                        <form action="" method="POST" role="form">
+                            <input type="text" class="form-control" id="" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-location-arrow"
+                                                                             aria-hidden="true"></i></button>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="bottom-footer">
+                    <div class="footer-nav">
+                        <div class="row">
+                            <div class="col-8 col-sm-6">
+                                <div class="footer-submenu">
+                                    <ul>
+                                        <li class="active"><a href="">infomation</a></li>
+                                        <li><a href="">Home</a></li>
+                                        <li><a href="">about us</a></li>
+                                        <li><a href="">gallery</a></li>
+                                        <li><a href="">servies</a></li>
+                                        <li><a href="">contact us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-6">
+                                <div class="footer-submenu">
+                                    <ul>
+                                        <li class="active"><a href="">custommer service</a></li>
+                                        <li><a href="">about us</a></li>
+                                        <li><a href="">deli very & returns</a></li>
+                                        <li><a href="">warranty</a></li>
+                                        <li><a href="">tem condition</a></li>
+                                        <li><a href="">privacy polyci</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-6">
+                                <div class="footer-submenu">
+                                    <ul>
+                                        <li class="active"><a href="">contact info</a></li>
+                                        <li><a href="">Phone</a></li>
+                                        <li class="phone"><a href="">+121 098 8907 9987</a></li>
+                                        <li><a href="">email</a></li>
+                                        <li class="email"><a href="">info@example.com</a></li>
+                                        <li><a href="">loacation</a></li>
+                                        <li class="honey"><a href="">honey avuneu new your city</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="coppyght-footer">
+                    <div class="footer-boolie">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="text-all">
+                                        <span class="bollie-text">
+                                            <i class="fa fa-creative-commons" aria-hidden="true"></i>
+                                            2019 Botie.All rights reserved | Hoàng tiến Dũng <a href="">https://www.facebook.com/profile.php?id=100034262581284</a>
+                                        </span>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="icon-aria">
+                                    <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

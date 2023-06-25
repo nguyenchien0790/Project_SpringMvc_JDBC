@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/category/showlist" class="alert">BACK</a>
+<div align="center">
+    <h2>EDIT CATEGORY</h2><br>
+    <p th:text="${validate}"></p>
+    <form th:action="@{/category/update}" method="post" th:object="${category}">
+        <label>ID: </label>
+        <input type="text" th:field="*{idCategory}" readonly>&ensp;&ensp;
+        <label>Name: </label>
+        <input type="text" th:field="*{nameCategory}">&ensp;
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+</html>
